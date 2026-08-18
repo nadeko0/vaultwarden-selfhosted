@@ -24,14 +24,14 @@ built-in password manager.
 
 ```mermaid
 flowchart LR
-    Client[Bitwarden clients] -->|HTTPS 443| Caddy
-    Caddy --> Vaultwarden
-    Caddy -.-> LE[Let's Encrypt]
-    DuckDNS -.-> DuckDNSorg[DuckDNS.org]
+    Client["Bitwarden clients"] -->|HTTPS| Caddy["Caddy"]
+    Caddy --> Vaultwarden["Vaultwarden"]
+    Caddy -.-> ACME["Lets Encrypt"]
+    DuckDNS -.-> DDNS["DuckDNS"]
 
-    subgraph VPS["Hetzner VPS - docker compose"]
-        Caddy["Caddy<br/>reverse proxy + auto TLS"]
-        Vaultwarden["Vaultwarden<br/>no published port"]
+    subgraph VPS["Hetzner VPS"]
+        Caddy
+        Vaultwarden
         DuckDNS["DuckDNS updater"]
     end
 ```
