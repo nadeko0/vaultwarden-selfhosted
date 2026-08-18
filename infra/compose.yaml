@@ -1,0 +1,53 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    environment:
+      DOMAIN: "${DOMAIN}"
+      ADMIN_TOKEN: "${ADMIN_TOKEN}"
+      SIGNUPS_ALLOWED: "false"
+    volumes:
+      - ./vw-data:/data
+    networks:
+      - vw-net
+    # No `ports:` mapping on purpose - not reachable from the host or the
+    # internet directly, only from other containers on vw-net. Caddy is the
+    # only service with a published port.
+
+  duckdns:
+    image: lscr.io/linuxserver/duckdns:latest
+    container_name: duckdns
+    restart: unless-stopped
+    environment:
+      - SUBDOMAINS=${DUCKDNS_SUBDOMAIN}
+      - TOKEN=${DUCKDNS_TOKEN}
+      - LOG_FILE=false
+    networks:
+      - vw-net
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
+    env_file:
+      - .env
+    depends_on:
+      - vaultwarden
+    networks:
+      - vw-net
+
+networks:
+  vw-net:
+    driver: bridge
+
+volumes:
+  caddy-data:
+  caddy-config:

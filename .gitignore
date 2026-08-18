@@ -2,6 +2,10 @@
 vault_export.json
 vault_export_*.json
 
+# Real secrets - only .env.example is tracked.
+infra/.env
+vw-data/
+
 # Runtime output from running the scripts against a real vault.
 # vault_snapshot_*.json is password-free and safe to commit if you want a
 # rotation history (see README) - it's only ignored here so a real run
