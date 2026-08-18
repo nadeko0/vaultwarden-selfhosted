@@ -24,35 +24,28 @@ built-in password manager.
 
 ```mermaid
 flowchart LR
-    subgraph internet[Internet]
-        client[Bitwarden clients<br/>iOS app / browser extension]
+    Client[Bitwarden clients] -->|HTTPS 443| Caddy
+    Caddy --> Vaultwarden
+    Caddy -.-> LE[Let's Encrypt]
+    DuckDNS -.-> DuckDNSorg[DuckDNS.org]
+
+    subgraph VPS["Hetzner VPS - docker compose"]
+        Caddy["Caddy<br/>reverse proxy + auto TLS"]
+        Vaultwarden["Vaultwarden<br/>no published port"]
+        DuckDNS["DuckDNS updater"]
     end
-
-    subgraph vps[Existing Hetzner VPS]
-        subgraph preexisting[Pre-existing, untouched]
-            proc1[Unrelated production process<br/>screen session, 4+ months uptime]
-        end
-
-        subgraph stack[docker compose]
-            caddy[Caddy<br/>reverse proxy + auto TLS]
-            vw[Vaultwarden<br/>no published port]
-            duck[DuckDNS updater]
-        end
-    end
-
-    le[Let's Encrypt]
-    dns[DuckDNS]
-
-    client -->|HTTPS 443| caddy
-    caddy -->|internal docker network| vw
-    caddy -.->|tls-alpn-01| le
-    duck -.->|IP updates| dns
 ```
 
 Vaultwarden has no `ports:` entry in the compose file — it's reachable only
 from other containers on the internal Docker network. Caddy is the only
 service exposed to the host, and it's the only thing the internet ever
 talks to.
+
+The VPS also runs an unrelated production process (a `screen` session with
+4+ months of uptime) outside this stack — not part of the diagram above
+since it's untouched by any of this, but it's the reason every step below
+was planned read-only-first. See [Constraint that shaped every
+step](#constraint-that-shaped-every-step).
 
 ## Stack
 
