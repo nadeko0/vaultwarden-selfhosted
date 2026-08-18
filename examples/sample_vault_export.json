@@ -1,0 +1,146 @@
+{
+  "encrypted": false,
+  "folders": [],
+  "items": [
+    {
+      "id": "11111111-1111-1111-1111-111111111101",
+      "type": 1,
+      "name": "Google",
+      "creationDate": "2024-01-10T09:00:00.000Z",
+      "revisionDate": "2024-01-10T09:00:00.000Z",
+      "login": {
+        "uris": [{ "uri": "https://accounts.google.com/" }],
+        "username": "demo.user@example.com",
+        "password": "OldReusedPass123!",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111102",
+      "type": 1,
+      "name": "GitHub",
+      "creationDate": "2024-02-01T12:00:00.000Z",
+      "revisionDate": "2024-02-01T12:00:00.000Z",
+      "login": {
+        "uris": [{ "uri": "https://github.com/login" }],
+        "username": "demo.user",
+        "password": "OldReusedPass123!",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111103",
+      "type": 1,
+      "name": "Retro Gaming Forum",
+      "creationDate": "2019-06-15T18:30:00.000Z",
+      "revisionDate": "2019-06-15T18:30:00.000Z",
+      "login": {
+        "uris": [{ "uri": "https://retrogamingforum.example/login" }],
+        "username": "demo_user_99",
+        "password": "OldReusedPass123!",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111104",
+      "type": 1,
+      "name": "Example Bank",
+      "creationDate": "2023-03-05T08:15:00.000Z",
+      "revisionDate": "2026-08-16T20:12:17.000Z",
+      "login": {
+        "uris": [{ "uri": "https://online.examplebank.test/login" }],
+        "username": "demo.user",
+        "password": "N3wUn1queBankPass!",
+        "passwordHistory": [
+          {
+            "password": "OldBankPass456!",
+            "lastUsedDate": "2026-08-16T20:12:17.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111105",
+      "type": 1,
+      "name": "CoinExchange",
+      "creationDate": "2022-11-20T14:00:00.000Z",
+      "revisionDate": "2026-08-16T20:17:34.000Z",
+      "login": {
+        "uris": [{ "uri": "https://coinexchange.example/login" }],
+        "username": "demo.user",
+        "password": "N3wUn1queCryptoPass!",
+        "passwordHistory": [
+          {
+            "password": "OldCryptoPass789!",
+            "lastUsedDate": "2026-08-16T20:17:34.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111106",
+      "type": 1,
+      "name": "Home Router",
+      "creationDate": "2021-05-01T10:00:00.000Z",
+      "revisionDate": "2021-05-01T10:00:00.000Z",
+      "login": {
+        "uris": [{ "uri": "http://192.168.1.1/" }],
+        "username": "admin",
+        "password": "RouterAdminPass!",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111107",
+      "type": 1,
+      "name": "Local Dev Panel",
+      "creationDate": "2025-09-12T11:00:00.000Z",
+      "revisionDate": "2025-09-12T11:00:00.000Z",
+      "login": {
+        "uris": [{ "uri": "http://localhost:8080/admin" }],
+        "username": "admin",
+        "password": "DevPanelPass!",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111108",
+      "type": 1,
+      "name": "LinkedIn",
+      "creationDate": "2020-01-15T09:00:00.000Z",
+      "revisionDate": "2020-01-15T09:00:00.000Z",
+      "login": {
+        "uris": [{ "uri": "https://linkedin.com" }],
+        "username": "demo.user@example.com",
+        "password": "SocialMediaPass2020",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111109",
+      "type": 1,
+      "name": "Streaming Service",
+      "creationDate": "2023-07-22T16:45:00.000Z",
+      "revisionDate": "2023-07-22T16:45:00.000Z",
+      "login": {
+        "uris": [{ "uri": "https://streamingservice.example/signin" }],
+        "username": "demo.user@example.com",
+        "password": "WatchAndChill2023",
+        "passwordHistory": []
+      }
+    },
+    {
+      "id": "11111111-1111-1111-1111-111111111110",
+      "type": 1,
+      "name": "Cloud Storage",
+      "creationDate": "2026-08-16T18:42:00.000Z",
+      "revisionDate": "2026-08-16T18:42:00.000Z",
+      "login": {
+        "uris": [{ "uri": "https://cloudstorage.example/login" }],
+        "username": "demo.user@example.com",
+        "password": "FreshCloudPass!",
+        "passwordHistory": []
+      }
+    }
+  ]
+}
